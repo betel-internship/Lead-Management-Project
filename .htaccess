@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /globallianz/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+RewriteCond $1 !^(index\.php|img|css|public|tmp|download|javascript|rte|document|xajax_js|robots\.txt)
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
+</IfModule>
